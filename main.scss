@@ -1,0 +1,190 @@
+@font-face {
+  font-family: 'Montserrat_Regular';
+  src: url('../assets/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat_SemiBold';
+  src: url('../assets/fonts/Montserrat-SemiBold.ttf');
+}
+
+* {
+  font-family: "Montserrat_Regular";
+}
+
+#navbar {
+  box-shadow: 0px 3px rgba(0, 0, 0, 0.25);
+
+  img {
+    margin-inline: 6%;
+  }
+
+  div {
+    width: 20px;
+
+    span {
+      font-family: "Montserrat_Regular";
+    }
+  }
+}
+
+section {
+  #product_details {
+    margin-inline: 8%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; // Allow this section to grow and fill available space
+    height: auto;
+
+    #product_image {
+      border: 5px solid #eeee;
+      border-radius: 50px;
+      width: 100%; // Ensure the container takes full width
+      max-width: 500px; // Set a maximum width for the image container
+      overflow: hidden; // Hide overflow to maintain rounded corners
+
+      img {
+        width: 100%; // Make the image responsive
+        height: auto; // Maintain aspect ratio
+        object-fit: cover; // Cover the container while maintaining aspect ratio
+      }
+
+    }
+
+    h2 {
+      padding-block: 2%;
+      font-family: "Montserrat_SemiBold";
+      font-size: 35px;
+    }
+
+    #details {
+      font-family: "Montserrat_Regular";
+      font-size: 20px;
+      text-align: justify;
+    }
+
+    .accordion {
+      width: 100%; // Takes full width of its container
+      margin-block: 4%;
+
+      &-item {
+        width: 100%; // Full width when collapsed
+        padding-block: 8px;
+
+        .accordion-header {
+          padding-block: 1%;
+
+
+          // When expanded
+          .accordion-collapse {
+            .accordion-body {
+              max-width: 800px; // Or your desired maximum width
+              width: 100%;
+              margin: 0 auto;
+              padding: 1rem 2rem; // Adjust padding if needed
+            }
+          }
+        }
+      }
+
+      &-button {
+        width: 100%;
+        padding: 0rem 1rem;
+        white-space: normal;
+        background-color: transparent !important;
+
+
+        &:focus,
+        &:focus-visible {
+          background-color: none;
+          outline: none !important;
+          box-shadow: none !important;
+          border-color: transparent !important;
+        }
+      }
+    }
+  }
+
+  #order_form {
+    margin-inline: 8%;
+    padding-inline: 2%;
+    padding-block: 2%;
+    width: 45%;
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    border: 4px solid #D9D9D9;
+    border-radius: 50px;
+    box-shadow: 1px 4px rgba(217, 217, 217, 1);
+
+
+    #counter {
+      width: 80%;
+      margin-inline: 10%;
+      text-align: center;
+
+      a,
+      span {
+        margin-block: 20px;
+      }
+    }
+
+    #price {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    input {
+      width: 80%;
+      margin: 0 auto;
+      padding: 2%;
+    }
+
+    button {
+      width: 70%;
+      margin: 0 auto;
+    }
+
+
+  }
+
+
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-float img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  border-top: solid 2px #B9252E;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+
+  .icons {
+    a {
+      margin-inline: 5px;
+
+      img {
+        width: 20%;
+      }
+    }
+  }
+}

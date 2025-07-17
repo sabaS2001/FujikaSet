@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/arabic.css">
+    </link>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="d-flex flex-wrap justify-content-center py-3 mb-4 px-4 align-items-center" id="navbar">
+
+        <div class="mx-2 my-3">
+            <a href="index.html" class="text-decoration-none text-black"><span>ENG</span></a>
+        </div>
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 ms-md-auto text-dark text-decoration-none">
+            <img src="assets/images/logo.svg">
+        </a>
+    </nav>
+
+    <section class="d-flex flex-row py-3 mb-4 px-4">
+        <!-- Order Form -->
+        <div class="border mx-2 " id="order_form">
+            <h1 class="fw-bolder text-end">قم بتقديم طلبك</h1>
+            <form class="needs-validation" novalidate>
+                <!-- Counter  -->
+                <div class="d-flex flex-column align-items-end justify-content-between">
+                    <h2 class="px-3 fs-3">الكمية</h2>
+                    <div class="d-flex flex-row align-items-center justify-content-between" id="counter">
+                        <a onclick=""><img src="assets/icons/minus.svg"></a>
+                        <span class="fs-3" id="count">0</span>
+                        <a onclick=""><img src="assets/icons/plus.svg"></a>
+                    </div>
+                    <span class="text-primary fs-4 fw-bold mt-2" id="counter">الطلب متاح فقط بالدزينة
+                        (علبة واحدة)</span>
+                </div>
+                <!-- Price -->
+                <div class="d-flex flex-column align-items-end justify-content-between">
+                    <h2 class="px-3 fs-3">السعر </h2>
+                    <div class="d-flex flex-row align-items-center justify-content-evenly border border-black rounded-pill px-3 py-2"
+                        id="price">
+                        <span class="fs-3">دولار أمريكي</span> <span id="total" class="fs-3"> 0 </span>
+                    </div>
+                    <span class="text-primary fs-4 w-100  fw-bold text-center mt-2">السعر من المصنع مباشرة (لا يشمل
+                        الشحن أو الضرائب)</span>
+                </div>
+                <hr>
+                <!--Full Name-->
+                <div class="d-flex flex-column my-4">
+                    <label for="full_name" class="fs-3 px-3 text-end">الاسم الكامل</label>
+                    <input type="text" class="form-control border border-black rounded-pill bg-white mt-2 text-end"
+                        id="full_name" name="full_name" required>
+                    <div class="invalid-feedback text-center px-3 fs-3 ">
+                        اسم خاطئ
+                    </div>
+                </div>
+                <!-- Email Address -->
+                <div class="d-flex flex-column my-4">
+                    <label for="email" class="fs-3 px-3 text-end">البريد الإلكتروني</label>
+                    <input type="email" class=" form-control border border-black rounded-pill bg-white mt-2 text-end"
+                        id="email" name="email" required>
+                    <div class="invalid-feedback text-center px-3 fs-3 ">
+                        بريد إلكتروني خاطئ
+                    </div>
+                </div>
+                <!-- Phone Number -->
+                <div class="d-flex flex-column my-4">
+                    <label for="telephone_num" class="fs-3 px-3 text-end">رقم الهاتف</label>
+                    <input type="tel" class=" form-control border border-black rounded-pill bg-white mt-2 text-end"
+                        id="telephone_num" name="telephone_num" required>
+                    <div class="invalid-feedback text-center px-3 fs-3 ">
+                        رقم هاتف خطأ
+                    </div>
+                </div>
+                <!-- Address 1 -->
+                <div class="d-flex flex-column my-4">
+                    <label for="address_one" class="fs-3 px-3 text-end">العنوان 1</label>
+                    <input type="text" class="border border-black rounded-pill bg-white mt-2 text-end" id="address_one"
+                        name="address_one">
+                </div>
+                <!-- Address 2 -->
+                <div class="d-flex flex-column my-4">
+                    <label for="address_two" class="fs-3 px-3 text-end">العنوان 2</label>
+                    <input type="text" class="border border-black rounded-pill bg-white mt-2 text-end" id="address_two"
+                        name="address_two">
+                </div>
+                <!-- City  -->
+                <div class="d-flex flex-column my-4">
+                    <label for="city" class="fs-3 px-3 text-end">المدينة</label>
+                    <input type="text" class=" form-control border border-black rounded-pill bg-white mt-2 text-end"
+                        id="city" name="city" required>
+                    <div class="invalid-feedback text-center px-3 fs-3 ">
+                        مدينة الخطأ
+                    </div>
+                </div>
+                <!-- Country  -->
+                <div class="d-flex flex-column my-4">
+                    <label for="country" class="fs-3 px-3 text-end">البلد </label>
+                    <input type="text" class=" form-control border border-black rounded-pill bg-white mt-2 text-end"
+                        id="country" name="country" required>
+                    <div class="invalid-feedback text-center px-3 fs-3 ">
+                        البلد الخطأ
+                    </div>
+                </div>
+
+                <button id="submitBtn" type="button"
+                    class="d-flex align-items-center justify-content-center border border-black rounded-4 bg-white py-2 fs-1 fw-bold text-center">قم
+                    بتقديم طلبك</button>
+            </form>
+        </div>
+        <!-- Product Details -->
+        <div id="product_details">
+            <div id="product_image">
+                <img src="assets\images\product_image.png">
+            </div>
+            <h2> Smart Automatic Pump Controller</h2>
+            <span id="details">
+                تحكم المضخة لديه تنظيم ضغط غير متقطع وتحديد ضغط ذكي، مما يجعله مناسبًا لمختلف تطبيقات بيئة الضغط لمعدات
+                التحكم في المضخات. يمكنه استبدال النظام التقليدي المكون من خزان تقليدي، ومفتاح ضغط، وجهاز حماية من نقص
+                المياه، وصمام فحص، وأربعة اتجاهات، ومؤقت، وما إلى ذلك.
+            </span>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item border border-black">
+                    <h2 class="accordion-header d-flex flex-row align-items-center">
+                        <button class="accordion-button collapsed d-flex flex-row-reverse" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                            aria-controls="flush-collapseOne">
+                            <span class="w-100 fs-3 text-end">عرض المزيد من المعلومات</span>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <!-- Product Technical Parameters Information -->
+                            <h2 class="fw-bold text-end">جهاز تحكم وحماية للمضخات </h2>
+                            <ul lang="rtl" class="right-bullets">
+                                <li>متعدد الاستخدامات</li>
+                                <li>تحكم ذكي</li>
+                                <li>حماية شاملة وذكية </li>
+                                <li>حماية من الحمل الزائد </li>
+                                <li>حماية من الحرارة العالية </li>
+                                <li>حماية من التشغيل الجاف </li>
+                            </ul>
+                            <!-- Features -->
+                            <h2 class="fw-bold text-end">المنظم الاتوماتيكي فوجيست</h2>
+                            <ul lang="rtl" class="right-bullets">
+                                <li>جهاز ذكي متعدد الاستخدمات </li>
+                                <li>تحكم اتوماتيكي ذكي لتشغيل المخات من الأسفل للأعلى </li>
+                                <li>تحكم في مضخات البوستر وتقوية الضغط في شبكات المياه </li>
+                                <li> حماية المضخات من العوامل المتسببة بأعطال المضخات</li>
+                                <li>الجهاز المنفرد بخصائص ومميزات لا تجدها في أي جهاز مشابه</li>
+                            </ul>
+                            <!--  Characteristic: -->
+                            <h2 class="fw-bold text-end">خصائص ومميزات </h2>
+
+                            <ul lang="rtl" class="right-bullets">
+                                <li>يعمل على تشغيل المضخات بقدرة لغاية 4 حصات </li>
+                                <li>القدرات الكهربائية 50-60 هيرتيز \ 110-240 فولت \ لغاية 30 أمبير </li>
+                                <li>يعمل على تشغيل مضخات الرفع لغاية 100 متر رأسي </li>
+                                <li> يعمل على تقوية المياه الساخنة لغاية 100 درجة مئوية </li>
+                                <li>يعمل على تشغيل مضخات السحب من ال لغاية 100 متر رأسي</li>
+                                <li>مزود بخاصية التدفق اضافة الى خاصية الضغط </li>
+                            </ul>
+                            <!--  Overall Dimension: -->
+                            <h2 class="fw-bold text-end">الابعاد</h2>
+                            <img src="assets/images/overall_dimension.png">
+                            <img src="assets/images/overall_dimension_2.png">
+                            <!-- Startup and Operation: -->
+                            <h2 class="fw-bold text-end">شاشة التحكم</h2>
+                            <ol lang="rtl" class="right-bullets">
+                                <li>كبسة الموجب (+) : لتحديد عامودالمياه وبرمجة الجهاز للعمل ذاتيا جسب عامود الماء
+                                    الصاعد للاعلى ان كان للضغط المباشر في الشبكة أو لتعبئة الخزان العلوي على الاسطح
+                                    اتوماتيك. </li>
+                                <li>كبسة السالب (-) : لتحديد الضغط التشغيلي في مضخات تقوية الضغظ في الشبكات. </li>
+                            </ol>
+                            <img src="assets/images/startup.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <footer class="d-flex flex-row justify-content-between pt-4 mb-4 px-5 align-items-center">
+        <!-- Fujika Logo -->
+        <img src="assets/images/logo_small.svg">
+        <!-- Copyright Text -->
+        <span class="justify-content-center">Copyright &copy; 2025 Fujika Industries</span>
+        <!-- Icons -->
+        <div class="icons">
+            <a href="https://wa.me/962795572805" target="_blank"><img src="assets/icons/whatsapp.png"></a>
+            <a href="https://www.facebook.com/FujikaCompany/" target="_blank"><img src="assets/icons/facebook.png"></a>
+            <a href="https://www.instagram.com/fujika_jordan_jayatwa_trading" target="_blank"><img
+                    src="assets/icons/instagram.png"></a>
+        </div>
+    </footer>
+
+    <!-- Loading Modal -->
+    <div class="modal fade" id="loadingModal" tabindex="-1" aria-labelledby="loadingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-end" dir="rtl">
+                <div class="modal-header text-end" dir="rtl">
+                    <h2 class="modal-title text-end fs-1" id="loadingModalLabel" dir="rtl">المعالجة</h2>
+                </div>
+                <div class="modal-body text-end fs-2" dir="rtl">
+                    يُرجى الانتظار نقوم بمعالجة طلبك.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-end" dir="rtl">
+                <div class="modal-header text-end" dir="rtl">
+                    <h2 class="modal-title text-end fs-1" id="confirmationModalLabel">تأكيد الطلب</h2>
+                </div>
+                <div class="modal-body text-end fs-2" dir="rtl">
+                    تم تأكيد طلبك بنجاح!
+                </div>
+                <div class="modal-footer text-end">
+                    <a href="https://www.fujikaindustries.com/"><button type="button" class="btn btn-secondary fs-2"
+                            data-bs-dismiss="modal">إغلاق</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/962795572805" target="_blank">
+            <img src="assets/icons/whatsapp_icon.png" alt="Chat on WhatsApp">
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

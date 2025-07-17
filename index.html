@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    </link>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="d-flex flex-wrap justify-content-center py-3 mb-4 px-4 align-items-center" id="navbar">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <img src="assets/images/logo.svg">
+        </a>
+        <div class="mx-3 my-3">
+            <a href="arabic_index.html" class="text-decoration-none text-black"><span>AR</span></a>
+        </div>
+    </nav>
+
+    <section class="d-flex flex-row py-3 mb-4 px-4">
+
+        <!-- Product Details -->
+        <div id="product_details">
+            <div id="product_image">
+                <img src="assets\images\product_image.png">
+            </div>
+            <h2> Smart Automatic Pump Controller</h2>
+            <span id="details">
+                The pump controller has stepless pressure regulation intelligent pressure identi cation, suitable for
+                various pressure environment applications of pump control equipment. it can completely replace the
+                traditional System composed with traditional tank, pressure switch, water shortage protection device,
+                check valve, four-way, timer and so on.
+            </span>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item border border-black">
+                    <h2 class="accordion-header d-flex flex-row align-items-center">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <span class="w-100 fs-5">View More Information</span>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <!-- Product Technical Parameters Information -->
+                            <h5 class="fw-bold">Product Technical Parameters:</h5>
+                            <ul>
+                                <li>Power: 0.1 -2.2kW Voltage: AC90-260V</li>
+                                <li>Maximum Working Pressure: 15 bar</li>
+                                <li>Starting pressure setting range: 0-10Bar</li>
+                                <li>Maximum Liquid Temperature: 80°C Rated</li>
+                                <li>Current: 10A 50/60HZ Joint Screw: G1 "Male</li>
+                                <li>Dry run protection timing adjusted to 60 secounds from 200 s</li>
+                            </ul>
+                            <!-- Features -->
+                            <h5 class="fw-bold">Features:</h5>
+                            <ul>
+                                <li>Automatic system for smart control of pump for smart pumps operation control ,
+                                    functioning with both pressure and ow sensors simultaneously. </li>
+                                <li>Suitable for all applications of lifting water from lower tanks to upper tanks, or
+                                    for boosting water in the network, and for water suction from the main supply. </li>
+                                <li>Operates silently and without disturbance. The device stops working when the water
+                                    supply shortage to protect the pump from malfunctions.</li>
+                                <li> The device will automatically restart when the water is present again. </li>
+                                <li>Equipped with control buttons(+,-) for pressure adjustment. Starting pressure in
+                                    lifting risers operation is set by + — buttons.</li>
+                            </ul>
+                            <!--  Characteristic: -->
+                            <h5 class="fw-bold">Characteristic:</h5>
+                            <span>
+                                The pump controller has stepless pressure regulation intelligent pressure identi cation,
+                                suitable for various pressure environment applications of pump control equipment. it can
+                                completely replace the traditional System composed with traditional tank, pressure
+                                switch, water shortage protection device, check valve, four-way, timer and so on.
+                                <br>
+                            </span>
+                            <!--  Overall Dimension: -->
+                            <h5 class="fw-bold">Overall Dimension:</h5>
+                            <img src="assets/images/overall_dimension.png">
+                            <img src="assets/images/overall_dimension_2.png">
+                            <!-- Startup and Operation: -->
+                            <h5 class="fw-bold">Startup and Operation:</h5>
+                            <ol>
+                                <li>"UP+" key: High Floor Water pump does not start, please press "UP+" key repeatedly
+                                    until start, then. </li>
+                                <li>"DOWN-" Key: Shut-olf Valve appears one open and one stop,please press "DOWN." key
+                                    repeatedly untill the phenomenon disapeared: and repair the pipeline or import check
+                                    valve is caused by leakage. </li>
+                            </ol>
+                            <img src="assets/images/startup.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Form -->
+        <div class="border mx-2 " id="order_form">
+            <h2 class="fw-bolder text-start">Place Your Order:</h2>
+            <form class="needs-validation" novalidate>
+                <!-- Counter  -->
+                <div class="d-flex flex-column align-items-start justify-content-between">
+                    <h5 class="px-3">Quantity:</h5>
+                    <div class="d-flex flex-row align-items-center justify-content-between" id="counter">
+                        <a onclick=""><img src="assets/icons/minus.svg"></a>
+                        <span class="fs-3" id="count">0</span>
+                        <a onclick=""><img src="assets/icons/plus.svg"></a>
+                    </div>
+                    <span class="text-primary fs-6 mt-2" id="counter">Note : Orders are only available by the dozen (one
+                        box).</span>
+                </div>
+                <!-- Price -->
+                <div class="d-flex flex-column align-items-start justify-content-between">
+                    <h5 class="px-3">Price:</h5>
+                    <div class="d-flex flex-row align-items-center justify-content-evenly border border-black rounded-pill px-3 py-2"
+                        id="price">
+                        <span id="total" class="fs-4"> 0 </span> <span class="fs-4">USD</span>
+                    </div>
+                    <span class="text-primary fs-6 w-100 text-center mt-2">Note : Ex-factory price (does not include
+                        shipping or taxes)</span>
+                </div>
+                <hr>
+                <!--Full Name-->
+                <div class="d-flex flex-column my-4">
+                    <label for="full_name" class="fs-5 px-3">Full Name: </label>
+                    <input type="text" class="form-control border border-black rounded-pill bg-white mt-2"
+                        id="full_name" name="full_name" required>
+                    <div class="invalid-feedback text-center px-3 fs-5 ">
+                        Invalid Name.
+                    </div>
+                </div>
+                <!-- Email Address -->
+                <div class="d-flex flex-column my-4">
+                    <label for="email" class="fs-5 px-3">Email Address: </label>
+                    <input type="email" class=" form-control border border-black rounded-pill bg-white mt-2" id="email"
+                        name="email" required>
+                    <div class="invalid-feedback text-center px-3 fs-5 ">
+                        Invalid Email.
+                    </div>
+                </div>
+                <!-- Phone Number -->
+                <div class="d-flex flex-column my-4">
+                    <label for="telephone_num" class="fs-5 px-3">Telephone Number: </label>
+                    <input type="tel" class=" form-control border border-black rounded-pill bg-white mt-2"
+                        id="telephone_num" name="telephone_num" required>
+                    <div class="invalid-feedback text-center px-3 fs-5 ">
+                        Invalid Phone Number.
+                    </div>
+                </div>
+                <!-- Address 1 -->
+                <div class="d-flex flex-column my-4">
+                    <label for="address_one" class="fs-5 px-3">Address 1: </label>
+                    <input type="text" class="border border-black rounded-pill bg-white mt-2" id="address_one"
+                        name="address_one">
+                </div>
+                <!-- Address 2 -->
+                <div class="d-flex flex-column my-4">
+                    <label for="address_two" class="fs-5 px-3">Address 2: </label>
+                    <input type="text" class="border border-black rounded-pill bg-white mt-2" id="address_two"
+                        name="address_two">
+                </div>
+                <!-- City  -->
+                <div class="d-flex flex-column my-4">
+                    <label for="city" class="fs-5 px-3">City: </label>
+                    <input type="text" class=" form-control border border-black rounded-pill bg-white mt-2" id="city"
+                        name="city" required>
+                    <div class="invalid-feedback text-center px-3 fs-5 ">
+                        Invalid City.
+                    </div>
+                </div>
+                <!-- Country  -->
+                <div class="d-flex flex-column my-4">
+                    <label for="country" class="fs-5 px-3">Country: </label>
+                    <input type="text" class=" form-control border border-black rounded-pill bg-white mt-2" id="country"
+                        name="country" required>
+                    <div class="invalid-feedback text-center px-3 fs-5 ">
+                        Invalid Country.
+                    </div>
+                </div>
+
+                <button id="submitBtn" type="button"
+                    class="d-flex align-items-center justify-content-center border border-black rounded-4 bg-white py-2 fs-3 text-center">Place
+                    Your Order</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="d-flex flex-row justify-content-between pt-4 mb-4 px-5 align-items-center">
+        <!-- Fujika Logo -->
+        <img src="assets/images/logo_small.svg">
+        <!-- Copyright Text -->
+        <span class="justify-content-center">Copyright &copy; 2025 Fujika Industries</span>
+        <!-- Icons -->
+        <div class="icons">
+            <a href="https://wa.me/962795572805" target="_blank"><img src="assets/icons/whatsapp.png"></a>
+            <a href="https://www.facebook.com/FujikaCompany/" target="_blank"><img src="assets/icons/facebook.png"></a>
+            <a href="https://www.instagram.com/fujika_jordan_jayatwa_trading" target="_blank"><img
+                    src="assets/icons/instagram.png"></a>
+        </div>
+    </footer>
+    <!-- Loading Modal -->
+    <div class="modal fade" id="loadingModal" tabindex="-1" aria-labelledby="loadingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loadingModalLabel">Processing...</h5>
+                </div>
+                <div class="modal-body">
+                    Please wait while we process your order.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Order Confirmation</h5>
+                </div>
+                <div class="modal-body">
+                    Your order has been confirmed successfully!
+                </div>
+                <div class="modal-footer">
+                    <a href="https://www.fujikaindustries.com/"><button type="button"
+                            class="btn btn-secondary">Close</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/962795572805" target="_blank">
+            <img src="assets/icons/whatsapp_icon.png" alt="Chat on WhatsApp">
+        </a>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>
